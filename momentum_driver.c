@@ -58,6 +58,46 @@ static inline uint8_t update_payload_length(momentum_frame_t *f,
   return len;
 }
 
+static inline const uint8_t *unpack_double_as_float(const uint8_t *p,
+                                                    float *out) {
+  uint64_t bits = 0;
+  // Little-endian assemble.
+  for (int i = 0; i < 8; i++) {
+    bits |= ((uint64_t)p[i]) << (8 * i);
+  }
+  p += 8;
+
+  // Decode sign, exp, mantissa.
+  uint32_t sign = (bits >> 63) & 0x1;
+  int32_t exp = ((bits >> 52) & 0x7FF) - 1023 + 127;
+  uint64_t mant = bits & 0xFFFFFFFFFFFFFULL;
+
+  // Handle edges.
+  if (exp <= 0) {
+    // Underflow to zero or subnormal-just zero it.
+    *out = 0.0f;
+  } else if (exp >= 0xFF) {
+    // Overflow to INF.
+    uint32_t infbits = (sign << 31) | (0xFF << 23);
+    memcpy(out, &infbits, 4);
+  } else {
+    // Truncate mantissa from 52 to 23 bits.
+    uint32_t mant32 = (uint32_t)(mant >> (52 - 23));
+    uint32_t fbits = (sign << 31) | ((uint32_t)exp << 23) | mant32;
+    memcpy(out, &fbits, 4);
+  }
+  return p;
+}
+
+static inline const uint8_t *unpack_real_double(const uint8_t *p,
+                                                unpacked_real_t *out) {
+#ifdef MOMENTUM_USE_FLOAT_32
+  return unpack_double_as_float(p, out);
+#else
+  return unpack_double_64(p, out);
+#endif
+}
+
 /** Public functions. *********************************************************/
 
 uint16_t crc16_ccitt(uint16_t crc, const uint8_t *buf, size_t len) {
@@ -190,8 +230,8 @@ uint8_t build_pressure_temp_payload(momentum_frame_t *f, sensor_data_t *s) {
 uint8_t parse_pressure_temp_payload(const momentum_frame_t *f,
                                     sensor_data_t *s) {
   const uint8_t *p = f->payload;
-  p = unpack_double_64(p, &s->bmp390_temperature);
-  p = unpack_double_64(p, &s->bmp390_pressure);
+  p = unpack_real_double(p, &s->bmp390_temperature);
+  p = unpack_real_double(p, &s->bmp390_pressure);
   return (uint8_t)(p - f->payload);
 }
 
@@ -231,9 +271,9 @@ uint8_t build_gps_coord_payload(momentum_frame_t *f, sensor_data_t *s) {
 
 uint8_t parse_gps_coord_payload(const momentum_frame_t *f, sensor_data_t *s) {
   const uint8_t *p = f->payload;
-  p = unpack_double_64(p, &s->gps_latitude);
+  p = unpack_real_double(p, &s->gps_latitude);
   p = unpack_char_8(p, &s->gps_lat_dir);
-  p = unpack_double_64(p, &s->gps_longitude);
+  p = unpack_real_double(p, &s->gps_longitude);
   p = unpack_char_8(p, &s->gps_lon_dir);
   return (uint8_t)(p - f->payload);
 }
@@ -254,8 +294,8 @@ uint8_t parse_gps_stats_payload(const momentum_frame_t *f, sensor_data_t *s) {
   p = unpack_uint_8(p, &s->gps_fix_quality);
   p = unpack_uint_8(p, &s->gps_satellites);
   p = unpack_float_32(p, &s->gps_hdop);
-  p = unpack_double_64(p, &s->gps_altitude);
-  p = unpack_double_64(p, &s->gps_geoid_sep);
+  p = unpack_real_double(p, &s->gps_altitude);
+  p = unpack_real_double(p, &s->gps_geoid_sep);
   return (uint8_t)(p - f->payload);
 }
 

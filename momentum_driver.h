@@ -37,6 +37,26 @@ extern "C" {
 
 #define MOMENTUM_CRC_INITIAL 0xFFFF
 
+/** Portable type alias. ******************************************************/
+
+// When the macro MOMENTUM_USE_FLOAT_32 is defined on the SPI controller side,
+// incoming 64-bit IEEE-754 values to be down-cast to 32-bit floats. The SPI
+// peripheral (STM32 sensor hub) firmware itself always packs and sends full
+// 64-bit doubles.
+//
+// On AVR systems (where double is a 32-bit float), the macro is enabled
+// automatically, so AVR based SPI controllers get float precision by default.
+
+#if defined(__AVR__) && !defined(MOMENTUM_USE_FLOAT_32)
+#define MOMENTUM_USE_FLOAT_32
+#endif
+
+#ifdef MOMENTUM_USE_FLOAT_32
+typedef float unpacked_real_t;
+#else
+typedef double unpacked_real_t;
+#endif
+
 /** Public types. *************************************************************/
 
 /**
@@ -83,29 +103,29 @@ typedef struct {
   float bno085_gravity_x;
   float bno085_gravity_y;
   float bno085_gravity_z;
-  double bmp390_temperature;
-  double bmp390_pressure;
-  uint8_t gps_hour;        // 0-23.
-  uint8_t gps_minute;      // 0-59.
-  uint8_t gps_second;      // 0-59.
-  uint8_t gps_day;         // 1-31.
-  uint8_t gps_month;       // 1-12.
-  uint8_t gps_year;        // Year since 2000 (25 for 2025).
-  double gps_latitude;     // Latitude in decimal degrees.
-  char gps_lat_dir;        // Latitude Direction (N/S).
-  double gps_longitude;    // Longitude in decimal degrees.
-  char gps_lon_dir;        // Longitude Direction (E/W).
-  uint8_t gps_fix_quality; // GPS Fix Quality.
+  unpacked_real_t bmp390_temperature;
+  unpacked_real_t bmp390_pressure;
+  uint8_t gps_hour;              // 0-23.
+  uint8_t gps_minute;            // 0-59.
+  uint8_t gps_second;            // 0-59.
+  uint8_t gps_day;               // 1-31.
+  uint8_t gps_month;             // 1-12.
+  uint8_t gps_year;              // Year since 2000 (25 for 2025).
+  unpacked_real_t gps_latitude;  // Latitude in decimal degrees.
+  char gps_lat_dir;              // Latitude Direction (N/S).
+  unpacked_real_t gps_longitude; // Longitude in decimal degrees.
+  char gps_lon_dir;              // Longitude Direction (E/W).
+  uint8_t gps_fix_quality;       // GPS Fix Quality.
   //  0 = No fix.
   //  1 = Autonomous GNSS fix.
   //  2 = Differential GNSS fix.
   //  4 = RTK fixed.
   //  5 = RTK float.
   //  6 = Estimated/dead reckoning fix.
-  uint8_t gps_satellites; // Number of Satellites.
-  float gps_hdop;         // Horizontal Dilution of Precision.
-  double gps_altitude;    // Altitude in meters.
-  double gps_geoid_sep;   // Geoidal Separation.
+  uint8_t gps_satellites;        // Number of Satellites.
+  float gps_hdop;                // Horizontal Dilution of Precision.
+  unpacked_real_t gps_altitude;  // Altitude in meters.
+  unpacked_real_t gps_geoid_sep; // Geoidal Separation.
 } sensor_data_t;
 
 /** Public functions. *********************************************************/
