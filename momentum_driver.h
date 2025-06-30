@@ -457,7 +457,6 @@ uint8_t parse_gps_stats_payload(const momentum_frame_t *f, sensor_data_t *s);
  *
  * @param f Pointer to received, packed frame.
  * @param s Destination sensor_data_t to populate on success.
- * @param l Destination led_data_t to populate on success.
  *
  * @return  MOMENTUM_OK on success, otherwise an error code:
  *          - MOMENTUM_ERROR_CRC if CRC mismatch.
