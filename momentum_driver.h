@@ -1,6 +1,6 @@
 /*******************************************************************************
  * @file momentum_driver.h
- * @brief Momentum driver for SPI based communication.
+ * @brief Momentum driver for SPI and CAN based communication.
  *******************************************************************************
  */
 
