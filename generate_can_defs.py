@@ -125,20 +125,25 @@ def generate_source(messages, output_filename: str):
     """Generate source file with extern array of CAN message definitions."""
     with open(f"{output_filename}.c", "w") as out:
         out.write(
-            "/*******************************************************************************\n")
+            "/*******************************************************************************\n"
+        )
         out.write(f" * @file {output_filename}.c\n")
         out.write(
-            " * @brief Auto-generated CAN message definitions from DBC file.\n")
+            " * @brief Auto-generated CAN message definitions from DBC file.\n"
+        )
         out.write(
-            " *******************************************************************************\n")
+            " *******************************************************************************\n"
+        )
         out.write(" */\n\n")
 
         out.write(
-            "/** Includes. *****************************************************************/\n\n")
+            "/** Includes. *****************************************************************/\n\n"
+        )
         out.write(f'#include "{output_filename}.h"\n\n')
 
         out.write(
-            "/** Public variables. *********************************************************/\n\n")
+            "/** Public variables. *********************************************************/\n\n"
+        )
         out.write("const can_message_t dbc_messages[] = {\n")
         for msg in messages:
             out.write("    {\n")
@@ -203,35 +208,42 @@ def generate_header(output_filename: str):
     """Generate header file with appropriate extern definitions."""
     with open(f"{output_filename}.h", "w") as out:
         out.write(
-            "/*******************************************************************************\n")
+            "/*******************************************************************************\n"
+        )
         out.write(f" * @file {output_filename}.h\n")
         out.write(
-            " * @brief Auto-generated CAN message definitions from DBC file.\n")
+            " * @brief Auto-generated CAN message definitions from DBC file.\n"
+        )
         out.write(
-            " *******************************************************************************\n")
+            " *******************************************************************************\n"
+        )
         out.write(" */\n\n")
 
         out.write(f"#ifndef {output_filename.upper()}_H\n")
         out.write(f"#define {output_filename.upper()}_H\n\n")
 
         out.write(
-            "/** CPP guard open. ***********************************************************/\n\n")
+            "/** CPP guard open. ***********************************************************/\n\n"
+        )
         out.write("#ifdef __cplusplus\n")
         out.write('extern "C" {\n')
 
         out.write("#endif\n\n")
 
         out.write(
-            "/** Includes. *****************************************************************/\n\n")
+            "/** Includes. *****************************************************************/\n\n"
+        )
         out.write('#include "momentum_can_driver.h"\n\n')
 
         out.write(
-            "/** Public variables. *********************************************************/\n\n")
+            "/** Public variables. *********************************************************/\n\n"
+        )
         out.write("extern const can_message_t dbc_messages[];\n")
         out.write("extern const int dbc_message_count;\n\n")
 
         out.write(
-            "/** CPP guard close. **********************************************************/\n\n")
+            "/** CPP guard close. **********************************************************/\n\n"
+        )
         out.write("#ifdef __cplusplus\n")
         out.write("}\n")
         out.write("#endif\n\n")
