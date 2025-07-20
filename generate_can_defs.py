@@ -223,17 +223,16 @@ def generate_header(output_filename: str):
         out.write(f"#define {output_filename.upper()}_H\n\n")
 
         out.write(
+            "/** Includes. *****************************************************************/\n\n"
+        )
+        out.write('#include "momentum_can_driver.h"\n\n')
+
+        out.write(
             "/** CPP guard open. ***********************************************************/\n\n"
         )
         out.write("#ifdef __cplusplus\n")
         out.write('extern "C" {\n')
-
         out.write("#endif\n\n")
-
-        out.write(
-            "/** Includes. *****************************************************************/\n\n"
-        )
-        out.write('#include "momentum_can_driver.h"\n\n')
 
         out.write(
             "/** Public variables. *********************************************************/\n\n"
