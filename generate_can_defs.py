@@ -85,9 +85,9 @@ def parse_dbc(filename: str):
                     # DBC: 1 = Intel (little-endian), 0 = Motorola (big-endian).
 
                     # Map DBC byte order to C based enum:
-                    # CAN_LITTLE_ENDIAN = 0, CAN_BIG_ENDIAN = 1.
+                    # CAN_LITTLE_ENDIAN (LSB) = 0, CAN_BIG_ENDIAN (MSB) = 1.
                     # if dbc_byte_order==1 (Intel), use CAN_LITTLE_ENDIAN;
-                    # if dbc_byte_order==0, then CAN_BIG_ENDIAN.
+                    # if dbc_byte_order==0 (Motorola), then CAN_BIG_ENDIAN.
                     if dbc_byte_order == 1:
                         byte_order = "CAN_LITTLE_ENDIAN"
                     else:
