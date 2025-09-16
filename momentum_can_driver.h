@@ -1,6 +1,6 @@
 /*******************************************************************************
  * @file momentum_can_driver.h
- * @brief Momentum driver for CAN based communication.
+ * @brief Momentum driver for CAN bus based communication.
  *******************************************************************************
  */
 
@@ -124,7 +124,7 @@ uint32_t double_to_raw(double physical_value, const can_signal_t *signal);
  *
  * @param signal Pointer to the signal definition.
  * @param data Pointer to the CAN data array.
- * @param physical_value The physical value to encode.
+ * @param raw_value The physical value to encode.
  */
 void pack_signal_raw32(const can_signal_t *signal, uint8_t *data,
                        uint32_t raw_value);

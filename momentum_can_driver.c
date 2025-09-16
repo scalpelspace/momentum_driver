@@ -1,6 +1,6 @@
 /*******************************************************************************
  * @file momentum_can_driver.c
- * @brief Momentum driver for CAN based communication.
+ * @brief Momentum driver for CAN bus based communication.
  *******************************************************************************
  */
 
