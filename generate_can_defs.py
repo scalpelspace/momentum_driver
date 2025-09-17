@@ -93,7 +93,7 @@ def parse_dbc(filename: str):
                     else:
                         byte_order = "CAN_BIG_ENDIAN"
 
-                    # The group 5 (sign) is typically '+', assume '+'.
+                    is_signed = m.group(5) == "-"
                     scale = float(m.group(6))
                     offset = float(m.group(7))
                     min_value = float(m.group(8))
@@ -106,6 +106,7 @@ def parse_dbc(filename: str):
                         "start_bit": start_bit,
                         "bit_length": bit_length,
                         "byte_order": byte_order,
+                        "is_signed": is_signed,
                         "scale": scale,
                         "offset": offset,
                         "min_value": min_value,
@@ -147,53 +148,36 @@ def generate_source(messages, output_filename: str):
         out.write("const can_message_t dbc_messages[] = {\n")
         for msg in messages:
             out.write("    {\n")
-            out.write('        .name = "{0}",\n'.format(msg["name"]))
-            out.write("        .message_id = {0},\n".format(msg["id"]))
+            out.write(f"        .name = \"{msg['name']}\",\n")
+            out.write(f"        .message_id = {msg['id']},\n")
             out.write("        .id_mask = 0xFFFFFFFF,\n")
-            out.write("        .dlc = {0},\n".format(msg["dlc"]))
+            out.write(f"        .dlc = {msg['dlc']},\n")
             out.write("        .rx_handler = 0,\n")
             out.write("        .tx_handler = 0,\n")
-            out.write(
-                "        .signal_count = {0},\n".format(len(msg["signals"]))
-            )
+            out.write(f"        .signal_count = {len(msg['signals'])},\n")
             out.write("        .signals =\n            {\n")
             for sig in msg["signals"]:
                 out.write("                {\n")
+                out.write(f"                    .name = \"{sig['name']}\",\n")
                 out.write(
-                    '                    .name = "{0}",\n'.format(sig["name"])
+                    f"                    .start_bit = {sig['start_bit']},\n"
                 )
                 out.write(
-                    "                    .start_bit = {0},\n".format(
-                        sig["start_bit"]
-                    )
+                    f"                    .bit_length = {sig['bit_length']},\n"
                 )
                 out.write(
-                    "                    .bit_length = {0},\n".format(
-                        sig["bit_length"]
-                    )
+                    f"                    .byte_order = {sig['byte_order']},\n"
                 )
                 out.write(
-                    "                    .byte_order = {0},\n".format(
-                        sig["byte_order"]
-                    )
+                    f"                    .is_signed = {str(sig['is_signed']).lower()},\n"
+                )
+                out.write(f"                    .scale = {sig['scale']}f,\n")
+                out.write(f"                    .offset = {sig['offset']}f,\n")
+                out.write(
+                    f"                    .min_value = {sig['min_value']}f,\n"
                 )
                 out.write(
-                    "                    .scale = {0}f,\n".format(sig["scale"])
-                )
-                out.write(
-                    "                    .offset = {0}f,\n".format(
-                        sig["offset"]
-                    )
-                )
-                out.write(
-                    "                    .min_value = {0}f,\n".format(
-                        sig["min_value"]
-                    )
-                )
-                out.write(
-                    "                    .max_value = {0}f,\n".format(
-                        sig["max_value"]
-                    )
+                    f"                    .max_value = {sig['max_value']}f,\n"
                 )
                 out.write("                },\n")
             out.write("            },\n")
