@@ -9,8 +9,8 @@
 
 /** Includes. *****************************************************************/
 
+#include "can_driver/can_driver.h"
 #include "momentum_can_dbc.h"
-#include "momentum_can_driver.h"
 #include "momentum_spi_driver.h"
 
 #endif
