@@ -11,10 +11,12 @@ Low level communication drivers for the Momentum dev board running the [
   <summary>Table of Contents</summary>
 
 <!-- TOC -->
+
 * [momentum_driver](#momentum_driver)
-  * [1 Overview](#1-overview)
-  * [2 SPI Drivers](#2-spi-drivers)
-  * [3 CAN Bus Drivers](#3-can-bus-drivers)
+    * [1 Overview](#1-overview)
+    * [2 SPI Drivers](#2-spi-drivers)
+    * [3 CAN Bus Drivers](#3-can-bus-drivers)
+
 <!-- TOC -->
 
 </details>
@@ -49,20 +51,5 @@ SPI drivers are directly implemented in the following files:
 
 ## 3 CAN Bus Drivers
 
-CAN drivers are implemented in the following files:
-
-1. [momentum_can_driver.c](momentum_can_driver.c)
-2. [momentum_can_driver.h](momentum_can_driver.h)
-
-The CAN driver relies on a DBC structure defined in
-the [can_momentum.dbc](can_momentum.dbc).
-
-- To translate this DBC file into the custom CAN
-  structures, [generate_can_defs.py](generate_can_defs.py) is used to generate
-  the following files:
-
-    1. [momentum_can_dbc.c](momentum_can_dbc.c)
-    2. [momentum_can_dbc.h](momentum_can_dbc.h)
-
-    - These generated files declare the message and signals in the appropriate
-      type structs.
+CAN drivers are implemented via the [`can_driver`](https://github.com/scalpelspace/can_driver)
+submodule.
