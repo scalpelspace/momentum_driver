@@ -11,12 +11,10 @@ Low level communication drivers for the Momentum dev board running the [
   <summary>Table of Contents</summary>
 
 <!-- TOC -->
-
 * [momentum_driver](#momentum_driver)
-    * [1 Overview](#1-overview)
-    * [2 SPI Drivers](#2-spi-drivers)
-    * [3 CAN Bus Drivers](#3-can-bus-drivers)
-
+  * [1 Overview](#1-overview)
+  * [2 SPI Drivers](#2-spi-drivers)
+  * [3 CAN Bus Drivers](#3-can-bus-drivers)
 <!-- TOC -->
 
 </details>
