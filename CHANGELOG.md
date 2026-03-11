@@ -23,4 +23,7 @@
 
 ## [v0.2.0 (TBD)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.2.0)
 
-- Update to new CAN ID scheme.
+- **Modifications:**
+    - Update to new CAN ID scheme.
+        - Update DBC CAN IDs and update DBC auto-generated code.
+    - Minor fixes for DBC including renaming of "gps" to "gnss".

@@ -33,87 +33,81 @@ NS_ :
 
 BS_:
 
-BU_:
+BU_: MOMENTUM LISTENER REQUESTER
 
 
-BO_ 257 state: 1 Vector__XXX
- SG_ system_state : 0|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 32 state: 1 MOMENTUM
+ SG_ system_state : 0|8@1+ (1,0) [0|255] ""  LISTENER
 
-BO_ 258 barometric: 8 Vector__XXX
- SG_ pressure : 0|32@1+ (0.00566,30000) [30000|24339514.8897] "Pa" Vector__XXX
- SG_ temperature : 32|16@1- (0.0019074,-40) [-40|85.001459] "degC" Vector__XXX
- SG_ barometric_state : 48|8@1+ (1,0) [0|255] "enum" Vector__XXX
+BO_ 64 barometric: 8 MOMENTUM
+ SG_ pressure : 0|32@1+ (0.00566,30000) [30000|24339514.8897] "Pa"  LISTENER
+ SG_ temperature : 32|16@1- (0.0019074,-40) [-40|85.001459] "degC"  LISTENER
+ SG_ barometric_state : 48|8@1+ (1,0) [0|255] "enum"  LISTENER
 
-BO_ 259 gps1: 8 Vector__XXX
- SG_ latitude : 0|32@1- (4.1909516E-08,-90) [-90|90.0000005692792] "deg" Vector__XXX
- SG_ longitude : 32|32@1- (8.3819032E-08,-180) [-180|180.000001138558] "deg" Vector__XXX
+BO_ 96 gnss1: 8 MOMENTUM
+ SG_ latitude : 0|32@1- (4.1909516E-08,-90) [-90|90.0000005692792] "deg"  LISTENER
+ SG_ longitude : 32|32@1- (8.3819032E-08,-180) [-180|180.000001138558] "deg"  LISTENER
 
-BO_ 260 gps2: 8 Vector__XXX
- SG_ speed : 0|16@1+ (0.01,0) [0|655.35] "knots" Vector__XXX
- SG_ course : 16|16@1+ (0.01,0) [0|655.35] "deg" Vector__XXX
- SG_ position_fix : 32|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ satellite_count : 40|8@1+ (1,0) [0|255] "count" Vector__XXX
- SG_ hdop : 48|16@1+ (0.01,0) [0|655.35] "" Vector__XXX
+BO_ 128 gnss2: 8 MOMENTUM
+ SG_ speed : 0|16@1+ (0.01,0) [0|655.35] "knots"  LISTENER
+ SG_ course : 16|16@1+ (0.01,0) [0|655.35] "deg"  LISTENER
+ SG_ position_fix : 32|8@1+ (1,0) [0|255] ""  LISTENER
+ SG_ satellite_count : 40|8@1+ (1,0) [0|255] "count"  LISTENER
+ SG_ hdop : 48|16@1+ (0.01,0) [0|655.35] ""  LISTENER
 
-BO_ 261 gps3: 7 Vector__XXX
- SG_ altitude : 0|32@1- (0.01,-150) [-150|42949522.95] "m" Vector__XXX
- SG_ geoid_separation : 32|16@1- (0.01,0) [-327.68|327.67] "m" Vector__XXX
- SG_ gps_state : 48|8@1+ (1,0) [0|255] "" Vector__XXX
+BO_ 160 gnss3: 7 MOMENTUM
+ SG_ altitude : 0|32@1- (0.01,-150) [-150|42949522.95] "m"  LISTENER
+ SG_ geoid_separation : 32|16@1- (0.01,0) [-327.68|327.67] "m"  LISTENER
+ SG_ gnss_state : 48|8@1+ (1,0) [0|255] ""  LISTENER
 
-BO_ 262 imu1: 8 Vector__XXX
- SG_ quaternion_x : 0|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15" Vector__XXX
- SG_ quaternion_y : 16|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15" Vector__XXX
- SG_ quaternion_z : 32|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15" Vector__XXX
- SG_ quaternion_w : 48|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15" Vector__XXX
+BO_ 192 imu1: 8 MOMENTUM
+ SG_ quaternion_x : 0|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15"  LISTENER
+ SG_ quaternion_y : 16|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15"  LISTENER
+ SG_ quaternion_z : 32|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15"  LISTENER
+ SG_ quaternion_w : 48|16@1- (3.05185E-05,-1) [-1|1.0000298975] "q15"  LISTENER
 
-BO_ 263 imu2: 6 Vector__XXX
- SG_ gyro_x : 0|16@1- (0.0610359,-2000) [-2000|1999.9877065] "deg/s" Vector__XXX
- SG_ gyro_y : 16|16@1- (0.0610359,-2000) [-2000|1999.9877065] "deg/s" Vector__XXX
- SG_ gyro_z : 32|16@1- (0.0610359,-2000) [-2000|1999.9877065] "deg/s" Vector__XXX
+BO_ 224 imu2: 6 MOMENTUM
+ SG_ gyro_x : 0|16@1- (0.0610359,-2000) [-2000|1999.9877065] "deg/s"  LISTENER
+ SG_ gyro_y : 16|16@1- (0.0610359,-2000) [-2000|1999.9877065] "deg/s"  LISTENER
+ SG_ gyro_z : 32|16@1- (0.0610359,-2000) [-2000|1999.9877065] "deg/s"  LISTENER
 
-BO_ 264 imu3: 6 Vector__XXX
- SG_ accel_x : 0|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2" Vector__XXX
- SG_ accel_y : 16|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2" Vector__XXX
- SG_ accel_z : 32|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2" Vector__XXX
+BO_ 256 imu3: 6 MOMENTUM
+ SG_ accel_x : 0|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
+ SG_ accel_y : 16|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
+ SG_ accel_z : 32|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
 
-BO_ 265 imu4: 6 Vector__XXX
- SG_ lin_accel_x : 0|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2" Vector__XXX
- SG_ lin_accel_y : 16|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2" Vector__XXX
- SG_ lin_accel_z : 32|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2" Vector__XXX
+BO_ 288 imu4: 6 MOMENTUM
+ SG_ lin_accel_x : 0|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
+ SG_ lin_accel_y : 16|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
+ SG_ lin_accel_z : 32|16@1- (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
 
-BO_ 272 imu5: 6 Vector__XXX
- SG_ gravity_x : 0|16@1- (0.0002994,-9.81) [-9.81|9.811179] "m/s^2" Vector__XXX
- SG_ gravity_y : 16|16@1- (0.0002994,-9.81) [-9.81|9.811179] "m/s^2" Vector__XXX
- SG_ gravity_z : 32|16@1- (0.0002994,-9.81) [-9.81|9.811179] "m/s^2" Vector__XXX
+BO_ 320 imu5: 6 MOMENTUM
+ SG_ gravity_x : 0|16@1- (0.0002994,-9.81) [-9.81|9.811179] "m/s^2"  LISTENER
+ SG_ gravity_y : 16|16@1- (0.0002994,-9.81) [-9.81|9.811179] "m/s^2"  LISTENER
+ SG_ gravity_z : 32|16@1- (0.0002994,-9.81) [-9.81|9.811179] "m/s^2"  LISTENER
 
-BO_ 513 command_a: 8 Vector__XXX
- SG_ command_u16_0 : 0|16@1+ (1,0) [0|65535] "unit" Vector__XXX
- SG_ command_u16_1 : 16|16@1+ (1,0) [0|65535] "unit" Vector__XXX
- SG_ command_u16_2 : 32|16@1+ (1,0) [0|65535] "unit" Vector__XXX
- SG_ command_u16_3 : 48|16@1+ (1,0) [0|65535] "unit" Vector__XXX
+BO_ 352 datetime_get: 0 REQUESTER
 
-BO_ 600 rtc: 8 Vector__XXX
- SG_ rtc_state : 0|8@1+ (1,0) [0|255] "" Vector__XXX
- SG_ rtc_year : 8|8@1+ (1,2000) [2000|2099] "" Vector__XXX
- SG_ rtc_month : 16|8@1+ (1,0) [1|12] "" Vector__XXX
- SG_ rtc_day : 24|8@1+ (1,0) [1|31] "" Vector__XXX
- SG_ rtc_weekday : 32|8@1+ (1,0) [1|7] "" Vector__XXX
- SG_ rtc_hour : 40|8@1+ (1,0) [0|23] "" Vector__XXX
- SG_ rtc_minute : 48|8@1+ (1,0) [0|59] "" Vector__XXX
- SG_ rtc_second : 56|8@1+ (1,0) [0|59] "" Vector__XXX
+BO_ 384 datetime_get_response: 7 MOMENTUM
+ SG_ year : 0|8@1+ (1,0) [0|99] "year"  REQUESTER
+ SG_ month : 8|8@1+ (1,0) [1|12] "month"  REQUESTER
+ SG_ date : 16|8@1+ (1,0) [1|31] "day"  REQUESTER
+ SG_ weekday : 24|8@1+ (1,0) [1|7] "weekday"  REQUESTER
+ SG_ hours : 32|8@1+ (1,0) [0|23] "hour"  REQUESTER
+ SG_ minutes : 40|8@1+ (1,0) [0|59] "min"  REQUESTER
+ SG_ seconds : 48|8@1+ (1,0) [0|59] "sec"  REQUESTER
+
+BO_ 960 version_get: 0 REQUESTER
+
+BO_ 992 version_get_response: 4 MOMENTUM
+ SG_ version_major : 0|8@1+ (1,0) [0|255] "major"  REQUESTER
+ SG_ version_minor : 8|8@1+ (1,0) [0|255] "minor"  REQUESTER
+ SG_ version_patch : 16|8@1+ (1,0) [0|255] "patch"  REQUESTER
+ SG_ version_identifier : 24|8@1+ (1,0) [0|255] "ascii"  REQUESTER
 
 
 
-CM_ BO_ 257 "State machine info";
-CM_ BO_ 258 "Barometric pressure data";
-CM_ BO_ 259 "Global positioning data 1";
-CM_ BO_ 260 "Global positioning data 2";
-CM_ BO_ 261 "Global positioning data 3";
-CM_ BO_ 262 "Inertial measurement unit data 1";
-CM_ BO_ 263 "Inertial measurement unit data 2";
-CM_ BO_ 264 "Inertial measurement unit data 3";
-CM_ BO_ 265 "Inertial measurement unit data 4";
-CM_ BO_ 272 "Inertial measurement unit data 5";
+CM_ BO_ 32 "State machine info";
 BA_DEF_  "MultiplexExtEnabled" ENUM  "No","Yes";
 BA_DEF_  "BusType" STRING ;
 BA_DEF_DEF_  "MultiplexExtEnabled" "No";
