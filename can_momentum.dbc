@@ -72,9 +72,9 @@ BO_ 224 gyroscope: 6 MOMENTUM
  SG_ gyro_z : 32|16@1+ (0.0610359,-2000) [-2000|1999.9877065] "deg/s"  LISTENER
 
 BO_ 256 magnetometer: 8 MOMENTUM
- SG_ mag_x : 0|16@1+ (0.0625,0) [-2000|2000] "uT"  LISTENER
- SG_ mag_y : 16|16@1+ (0.0625,0) [-2000|2000] "uT"  LISTENER
- SG_ mag_z : 32|16@1+ (0.0625,0) [-2000|2000] "uT"  LISTENER
+ SG_ mag_x : 0|16@1+ (0.0625,-2000) [-2000|2095.9375] "uT"  LISTENER
+ SG_ mag_y : 16|16@1+ (0.0625,-2000) [-2000|2095.9375] "uT"  LISTENER
+ SG_ mag_z : 32|16@1+ (0.0625,-2000) [-2000|2095.9375] "uT"  LISTENER
 
 BO_ 288 accelerometer: 6 MOMENTUM
  SG_ accel_x : 0|16@1+ (0.0047889,-156.9) [-156.9|156.9405615] "m/s^2"  LISTENER
