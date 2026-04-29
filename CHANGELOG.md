@@ -62,5 +62,5 @@
 - **Modifications:**
     - Add `magnetometer` message as ID `256` and bump subsequent messages.
     - Rename IMU messages for specific sensor data type.
-    - Swap to signed signals in DBC where needed.
+    - Refactor DBC signal encoding conventions for use of signed signals.
         - Add documentation regarding DBC implementation.
