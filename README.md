@@ -15,6 +15,7 @@ Low level communication drivers for the Momentum dev board running the [
   * [1 Overview](#1-overview)
   * [2 SPI Drivers](#2-spi-drivers)
   * [3 CAN Bus Drivers](#3-can-bus-drivers)
+    * [3.1 CAN DBC Notes](#31-can-dbc-notes)
 <!-- TOC -->
 
 </details>
@@ -49,5 +50,15 @@ SPI drivers are directly implemented in the following files:
 
 ## 3 CAN Bus Drivers
 
-CAN drivers are implemented via the [`can_driver`](https://github.com/scalpelspace/can_driver)
-submodule.
+CAN drivers are implemented via
+the [`can_driver`](https://github.com/scalpelspace/can_driver) submodule.
+
+### 3.1 CAN DBC Notes
+
+The `temperature` signal in `barometric` uses `@1+` unsigned despite having
+negative values. The full -40 to +85 degC span requires ~65534 raw counts,
+exceeding the signed 16-bit limit of 32767.
+
+`quaternion` message components are bounded at +-0.99998, not +-1. The
+`BNO085`/`BNO086` uses Q15 fixed-point internally and physically cannot output
+exactly +-1.0.

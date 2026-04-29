@@ -60,5 +60,7 @@
 ## [v0.3.0 (WIP)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.0)
 
 - **Modifications:**
-  - Add `magnetometer` message as ID `256` and bump subsequent messages.
-  - Rename IMU messages for specific sensor data type.
+    - Add `magnetometer` message as ID `256` and bump subsequent messages.
+    - Rename IMU messages for specific sensor data type.
+    - Swap to signed signals in DBC where needed.
+        - Add documentation regarding DBC implementation.
