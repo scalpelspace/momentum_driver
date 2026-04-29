@@ -11,7 +11,7 @@
   * [v0.2.0 (2026-03-11)](#v020--2026-03-11-)
   * [v0.2.1 (2026-04-22)](#v021--2026-04-22-)
   * [v0.2.2 (2026-04-22)](#v022--2026-04-22-)
-  * [v0.3.0 (WIP)](#v030--wip-)
+  * [v0.3.0 (2026-04-28)](#v030--2026-04-28-)
 <!-- TOC -->
 
 </details>
@@ -51,13 +51,12 @@
         - Several CAN signals were declared `is_signed = true` while using an
           unsigned-with-bias encoding (`offset = -min_value`), causing
           `physical_to_raw` to clamp raw values at 2^(N-1)-1 and collapse the
-          upper
-          half of each physical range to ~0.
+          upper half of each physical range to ~0.
         - The fix applied is to flip those signals to `is_signed = false`.
 
 ---
 
-## [v0.3.0 (WIP)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.0)
+## [v0.3.0 (2026-04-28)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.0)
 
 - **Modifications:**
     - Add `magnetometer` message as ID `256` and bump subsequent messages.
