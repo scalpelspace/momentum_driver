@@ -11,6 +11,7 @@
   * [v0.2.0 (2026-03-11)](#v020--2026-03-11-)
   * [v0.2.1 (2026-04-22)](#v021--2026-04-22-)
   * [v0.2.2 (2026-04-22)](#v022--2026-04-22-)
+  * [v0.3.0 (WIP)](#v030--wip-)
 <!-- TOC -->
 
 </details>
@@ -53,3 +54,11 @@
           upper
           half of each physical range to ~0.
         - The fix applied is to flip those signals to `is_signed = false`.
+
+---
+
+## [v0.3.0 (WIP)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.0)
+
+- **Modifications:**
+  - Add `magnetometer` message as ID `256` and bump subsequent messages.
+  - Rename IMU messages for specific sensor data type.
