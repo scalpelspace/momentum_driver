@@ -103,9 +103,9 @@ BO_ 416 datetime_get_response: 7 MOMENTUM
  SG_ seconds : 48|8@1+ (1,0) [0|59] "sec"  REQUESTER
 
 BO_ 448 rgb_led_set: 3 REQUESTER
- SG_ red : 0|8@1+ (1,0) [0|255] "red"  MOMENTUM
- SG_ green : 8|8@1+ (1,0) [0|255] "red"  MOMENTUM
- SG_ blue : 16|8@1+ (1,0) [0|255] "red"  MOMENTUM
+ SG_ red : 0|8@1+ (1,0) [0|255] ""  MOMENTUM
+ SG_ green : 8|8@1+ (1,0) [0|255] ""  MOMENTUM
+ SG_ blue : 16|8@1+ (1,0) [0|255] ""  MOMENTUM
 
 BO_ 960 version_get: 0 REQUESTER
 
