@@ -70,4 +70,6 @@
 ## [v0.3.1 (WIP)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.1)
 
 - **Additions:**
-    - Add `rgb_led_set` message as ID `448`.
+    - Add `gnss_utc_get` message as ID `448`.
+    - Add `gnss_utc_get_response` message as ID `480`.
+    - Add `rgb_led_set` message as ID `512`.
