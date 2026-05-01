@@ -12,6 +12,7 @@
   * [v0.2.1 (2026-04-22)](#v021--2026-04-22-)
   * [v0.2.2 (2026-04-22)](#v022--2026-04-22-)
   * [v0.3.0 (2026-04-28)](#v030--2026-04-28-)
+  * [v0.3.1 (WIP)](#v031--wip-)
 <!-- TOC -->
 
 </details>
@@ -63,3 +64,10 @@
     - Rename IMU messages for specific sensor data type.
     - Refactor DBC signal encoding conventions for use of signed signals.
         - Add documentation regarding DBC implementation.
+
+---
+
+## [v0.3.1 (WIP)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.1)
+
+- **Additions:**
+    - Add `rgb_led_set` message as ID `448`.
