@@ -12,7 +12,7 @@
   * [v0.2.1 (2026-04-22)](#v021--2026-04-22-)
   * [v0.2.2 (2026-04-22)](#v022--2026-04-22-)
   * [v0.3.0 (2026-04-28)](#v030--2026-04-28-)
-  * [v0.3.1 (WIP)](#v031--wip-)
+  * [v0.3.2 (2026-05-01)](#v032--2026-05-01-)
 <!-- TOC -->
 
 </details>
@@ -67,9 +67,11 @@
 
 ---
 
-## [v0.3.1 (WIP)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.1)
+## [v0.3.2 (2026-05-01)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.2)
 
 - **Additions:**
     - Add `gnss_utc_get` message as ID `448`.
     - Add `gnss_utc_get_response` message as ID `480`.
     - Add `rgb_led_set` message as ID `512`.
+- **Modifications:**
+    - Update `can_driver` to `v0.3.7`.
