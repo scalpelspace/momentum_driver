@@ -42,6 +42,7 @@ extern "C" {
 
 #define MOMENTUM_FRAME_TYPE_IMU_ACCEL 0x71 // SH-2 ID + 0x70.
 #define MOMENTUM_FRAME_TYPE_IMU_GYRO 0x72
+#define MOMENTUM_FRAME_TYPE_IMU_MAG 0x73
 #define MOMENTUM_FRAME_TYPE_IMU_LINACCEL 0x74
 #define MOMENTUM_FRAME_TYPE_IMU_QUAT 0x75
 #define MOMENTUM_FRAME_TYPE_IMU_GRAV 0x76
@@ -98,6 +99,9 @@ typedef struct {
   float gyro_x;
   float gyro_y;
   float gyro_z;
+  float mag_x;
+  float mag_y;
+  float mag_z;
   float accel_x;
   float accel_y;
   float accel_z;
@@ -244,6 +248,32 @@ uint8_t build_gyro_payload(momentum_frame_t *f, sensor_data_t *s);
  * @return Number of bytes read (== f->length).
  */
 uint8_t parse_gyro_payload(const momentum_frame_t *f, sensor_data_t *s);
+
+/**
+ * @brief Pack magnetometer data into the frame payload.
+ *
+ * Serializes magnetometer readings (x, y, z) from the provided sensor data into
+ * the frame payload. Updates f->length accordingly.
+ *
+ * @param f Pointer to the frame to populate.
+ * @param s Pointer to the sensor_data_t containing source magnetometer values.
+ *
+ * @return Number of bytes written into f->payload.
+ */
+uint8_t build_mag_payload(momentum_frame_t *f, sensor_data_t *s);
+
+/**
+ * @brief Unpack magnetometer data from the frame payload.
+ *
+ * Deserializes magnetometer readings (x, y, z) from the provided frame payload
+ * into sensor data.
+ *
+ * @param f Pointer to the frame to read.
+ * @param s Pointer to the sensor_data_t to update magnetometer values.
+ *
+ * @return Number of bytes read (== f->length).
+ */
+uint8_t parse_mag_payload(const momentum_frame_t *f, sensor_data_t *s);
 
 /**
  * @brief Pack accelerometer data into the frame payload.

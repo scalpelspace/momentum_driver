@@ -147,6 +147,23 @@ uint8_t parse_gyro_payload(const momentum_frame_t *f, sensor_data_t *s) {
   return (uint8_t)(p - f->payload);
 }
 
+uint8_t build_mag_payload(momentum_frame_t *f, sensor_data_t *s) {
+  uint8_t *start = f->payload;
+  uint8_t *p = f->payload;
+  p = pack_float_32(p, s->mag_x);
+  p = pack_float_32(p, s->mag_y);
+  p = pack_float_32(p, s->mag_z);
+  return update_payload_length(f, start, p);
+}
+
+uint8_t parse_mag_payload(const momentum_frame_t *f, sensor_data_t *s) {
+  const uint8_t *p = f->payload;
+  p = unpack_float_32(p, &s->mag_x);
+  p = unpack_float_32(p, &s->mag_y);
+  p = unpack_float_32(p, &s->mag_z);
+  return (uint8_t)(p - f->payload);
+}
+
 uint8_t build_accel_payload(momentum_frame_t *f, sensor_data_t *s) {
   uint8_t *start = f->payload;
   uint8_t *p = f->payload;
@@ -349,6 +366,9 @@ momentum_status_t parse_momentum_response_frame(const momentum_frame_t *f,
     break;
   case MOMENTUM_FRAME_TYPE_IMU_GYRO:
     parse_gyro_payload(f, s);
+    break;
+  case MOMENTUM_FRAME_TYPE_IMU_MAG:
+    parse_mag_payload(f, s);
     break;
   case MOMENTUM_FRAME_TYPE_IMU_ACCEL:
     parse_accel_payload(f, s);

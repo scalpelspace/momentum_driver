@@ -13,6 +13,7 @@
   * [v0.2.2 (2026-04-22)](#v022--2026-04-22-)
   * [v0.3.0 (2026-04-28)](#v030--2026-04-28-)
   * [v0.3.2 (2026-05-01)](#v032--2026-05-01-)
+  * [v0.3.3 (2026-05-03)](#v033--2026-05-03-)
 <!-- TOC -->
 
 </details>
@@ -75,3 +76,10 @@
     - Add `rgb_led_set` message as ID `512`.
 - **Modifications:**
     - Update `can_driver` to `v0.3.7`.
+
+---
+
+## [v0.3.3 (2026-05-03)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.3)
+
+- **Additions:**
+    - Update SPI drivers to add `magnetometer` data.
