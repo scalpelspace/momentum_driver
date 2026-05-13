@@ -14,6 +14,7 @@
   * [v0.3.0 (2026-04-28)](#v030--2026-04-28-)
   * [v0.3.2 (2026-05-01)](#v032--2026-05-01-)
   * [v0.3.3 (2026-05-03)](#v033--2026-05-03-)
+  * [v0.3.4 (TBD)](#v034--tbd-)
 <!-- TOC -->
 
 </details>
@@ -83,3 +84,10 @@
 
 - **Additions:**
     - Update SPI drivers to add `magnetometer` data.
+
+---
+
+## [v0.3.4 (TBD)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.4)
+
+- **Modifications:**
+    - Update `can_driver` to `v0.3.7`.
