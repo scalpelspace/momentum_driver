@@ -14,7 +14,7 @@
   * [v0.3.0 (2026-04-28)](#v030--2026-04-28-)
   * [v0.3.2 (2026-05-01)](#v032--2026-05-01-)
   * [v0.3.3 (2026-05-03)](#v033--2026-05-03-)
-  * [v0.3.4 (TBD)](#v034--tbd-)
+  * [v0.3.4 (2026-06-07)](#v034--2026-06-07-)
 <!-- TOC -->
 
 </details>
@@ -87,7 +87,8 @@
 
 ---
 
-## [v0.3.4 (TBD)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.4)
+## [v0.3.4 (2026-06-07)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.4)
 
 - **Modifications:**
     - Update `can_driver` to `v0.3.7`.
+    - Rename CAN bus messages for improved "get" vs "response" clarity.

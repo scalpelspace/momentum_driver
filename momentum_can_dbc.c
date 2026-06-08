@@ -520,7 +520,7 @@ const can_message_t dbc_messages[] = {
             },
     },
     {
-        .name = "datetime_get_response",
+        .name = "datetime_response",
         .message_id = 416,
         .id_mask = 0xFFFFFFFF,
         .dlc = 7,
@@ -622,7 +622,7 @@ const can_message_t dbc_messages[] = {
             },
     },
     {
-        .name = "gnss_utc_get_response",
+        .name = "gnss_utc_response",
         .message_id = 480,
         .id_mask = 0xFFFFFFFF,
         .dlc = 7,
@@ -758,7 +758,7 @@ const can_message_t dbc_messages[] = {
             },
     },
     {
-        .name = "version_get_response",
+        .name = "version_response",
         .message_id = 992,
         .id_mask = 0xFFFFFFFF,
         .dlc = 4,
