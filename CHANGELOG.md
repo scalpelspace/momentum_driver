@@ -92,3 +92,4 @@
 - **Modifications:**
     - Update `can_driver` to `v0.3.7`.
     - Rename CAN bus messages for improved "get" vs "response" clarity.
+    - Refactor rename `LICENSE.txt` to `LICENSE`.
