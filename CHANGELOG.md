@@ -15,6 +15,7 @@
   * [v0.3.2 (2026-05-01)](#v032--2026-05-01-)
   * [v0.3.3 (2026-05-03)](#v033--2026-05-03-)
   * [v0.3.4 (2026-06-07)](#v034--2026-06-07-)
+  * [v0.3.4 (2026-06-07)](#v034--2026-06-07--1)
 <!-- TOC -->
 
 </details>
@@ -93,3 +94,10 @@
     - Update `can_driver` to `v0.3.7`.
     - Rename CAN bus messages for improved "get" vs "response" clarity.
     - Refactor rename `LICENSE.txt` to `LICENSE`.
+
+---
+
+## [v0.3.5 (2026-06-11)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.5)
+
+- **Modifications:**
+    - Update `state` message to include an 8-bit MCU core temperature value.
