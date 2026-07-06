@@ -16,6 +16,7 @@
   * [v0.3.3 (2026-05-03)](#v033--2026-05-03-)
   * [v0.3.4 (2026-06-07)](#v034--2026-06-07-)
   * [v0.3.5 (2026-06-11)](#v035--2026-06-11-)
+  * [v0.4.0 (2026-07-06)](#v040--2026-07-06-)
 <!-- TOC -->
 
 </details>
@@ -101,3 +102,11 @@
 
 - **Modifications:**
     - Update `state` message to include an 8-bit MCU core temperature value.
+
+---
+
+## [v0.4.0 (2026-07-06)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.4.0)
+
+- Update [`can_driver`](can_driver) for tagged version v0.4.0 for muxed signal
+  support.
+    - Update DBC code generation.
