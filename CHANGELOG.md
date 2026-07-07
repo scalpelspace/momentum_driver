@@ -43,7 +43,7 @@
 
 ## [v0.2.1 (2026-04-22)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.2.1)
 
-- Update `can_driver` to `v0.3.6`.
+- Update `can_driver` to v0.3.6.
 - Minor DBC cleanup (remove unsupported DBC property).
 
 ---
@@ -61,7 +61,7 @@
 
 ## [v0.3.0 (2026-04-28)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.0)
 
-- Add `magnetometer` message as ID `256` and bump subsequent messages.
+- Add `magnetometer` message as ID 256 and bump subsequent messages.
 - Rename IMU messages for specific sensor data type.
 - Refactor DBC signal encoding conventions for use of signed signals.
     - Add documentation regarding DBC implementation.
@@ -70,10 +70,10 @@
 
 ## [v0.3.2 (2026-05-01)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.2)
 
-- Add `gnss_utc_get` message as ID `448`.
-- Add `gnss_utc_get_response` message as ID `480`.
-- Add `rgb_led_set` message as ID `512`.
-- Update `can_driver` to `v0.3.7`.
+- Add `gnss_utc_get` message as ID 448.
+- Add `gnss_utc_get_response` message as ID 480.
+- Add `rgb_led_set` message as ID 512.
+- Update `can_driver` to v0.3.7.
 
 ---
 
@@ -85,7 +85,7 @@
 
 ## [v0.3.4 (2026-06-07)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.3.4)
 
-- Update `can_driver` to `v0.3.7`.
+- Update `can_driver` to v0.3.7.
 - Rename CAN bus messages for improved "get" vs "response" clarity.
 - Refactor rename `LICENSE.txt` to `LICENSE`.
 
