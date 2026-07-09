@@ -107,4 +107,4 @@
 ## [v0.4.1 (2026-07-09)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.4.1)
 
 - Cleanup `CHANGELOG.md` for formatting and syntax consistency.
-- Improve README.md docs.
+- Improve `README.md` docs.
