@@ -17,7 +17,7 @@
   * [v0.3.4 (2026-06-07)](#v034--2026-06-07-)
   * [v0.3.5 (2026-06-11)](#v035--2026-06-11-)
   * [v0.4.0 (2026-07-06)](#v040--2026-07-06-)
-  * [v0.4.1 (TBD)](#v041--tbd-)
+  * [v0.4.1 (2026-07-09)](#v041--2026-07-09-)
 <!-- TOC -->
 
 </details>
@@ -104,6 +104,7 @@
 
 ---
 
-## [v0.4.1 (TBD)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.4.1)
+## [v0.4.1 (2026-07-09)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.4.1)
 
 - Cleanup `CHANGELOG.md` for formatting and syntax consistency.
+- Improve README.md docs.
