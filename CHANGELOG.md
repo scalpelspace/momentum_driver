@@ -18,6 +18,7 @@
   * [v0.3.5 (2026-06-11)](#v035--2026-06-11-)
   * [v0.4.0 (2026-07-06)](#v040--2026-07-06-)
   * [v0.4.1 (2026-07-09)](#v041--2026-07-09-)
+  * [v0.4.2 (2026-07-10)](#v042--2026-07-10-)
 <!-- TOC -->
 
 </details>
@@ -108,3 +109,9 @@
 
 - Cleanup `CHANGELOG.md` for formatting and syntax consistency.
 - Improve `README.md` docs.
+
+---
+
+## [v0.4.2 (2026-07-10)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.4.2)
+
+- Update `can_driver` to tagged version v0.5.0.
