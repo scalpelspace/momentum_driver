@@ -115,3 +115,4 @@
 ## [v0.4.2 (2026-07-10)](https://github.com/scalpelspace/momentum_driver/releases/tag/v0.4.2)
 
 - Update `can_driver` to tagged version v0.5.0.
+- Add `.gitattributes`.
